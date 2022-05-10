@@ -27,4 +27,4 @@ jobs:
 
     run:
       path: python
-      args: hello_world/main.py
+      args: [hello_world/main.py]
