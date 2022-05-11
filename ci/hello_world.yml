@@ -4,8 +4,8 @@ resources:
   type: git
   source:
     branch: master
-    uri: git@github.com:aishthombale/concourse_helloworld_python.git
-    private_key: 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
+    uri: https://github.com/aishthombale/concourse_helloworld_python.git
+    
 jobs:
 - name: build-hello-world
   plan:
