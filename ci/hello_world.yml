@@ -1,29 +1,26 @@
+---
 resources:
 - name: hello_world
   type: git
-  icon: github-circle
   source:
-    uri: git@github.com:aishthombale/concourse_helloworld_python.git
     branch: master
+    uri: git@github.com:aishthombale/concourse_helloworld_python.git
     private_key: "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"
-  
 jobs:
-
-- name: build
+- name: build-hello-world
   plan:
   - get: hello_world
-    trigger: true
   - task: display-hello
-    platform: linux
-    image_resource:
-      type: registry-image
-      source:
-        repository: python
-        tag: 3.8-buster
+    config:
+      platform: linux
+      image_resource:
+        type: registry-image
+        source:
+          repository: python
+          tag: 3.8-buster
+      inputs:
+      - name: hello_world
+      run:
+        path: python
+        args: [hello_world/main.py]
 
-    inputs:
-    - name: hello_world
-
-    run:
-      path: python
-      args: [hello_world/main.py]
