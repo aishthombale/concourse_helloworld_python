@@ -3,7 +3,7 @@ resources:
 - name: hello_world
   type: git
   source:
-    branch: master
+    branch: main
     uri: https://github.com/aishthombale/concourse_helloworld_python.git
     
 jobs:
