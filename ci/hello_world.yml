@@ -1,12 +1,11 @@
 resources:
-
 - name: hello_world
   type: git
   icon: github-circle
   source:
-   uri: git@github.com:aishthombale/concourse_helloworld_python.git
-   branch: master
-   private_key: "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"
+    uri: git@github.com:aishthombale/concourse_helloworld_python.git
+    branch: master
+    private_key: "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"
   
 jobs:
 
@@ -17,13 +16,13 @@ jobs:
   - task: display-hello
     platform: linux
     image_resource:
-      type: docker-image
+      type: registry-image
       source:
         repository: python
         tag: 3.8-buster
 
     inputs:
-      - name: hello_world
+    - name: hello_world
 
     run:
       path: python
