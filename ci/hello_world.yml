@@ -4,8 +4,48 @@ resources:
   type: git
   source:
     branch: main
-    uri: https://github.com/aishthombale/concourse_helloworld_python.git
-    
+    uri: git@github.com:aishthombale/concourse_helloworld_python.git
+    private_key: |
+    -----BEGIN OPENSSH PRIVATE KEY-----
+    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
+    -----END OPENSSH PRIVATE KEY-----
+
+
 jobs:
 - name: build-hello-world
   plan:
@@ -23,4 +63,3 @@ jobs:
       run:
         path: python
         args: [hello_world/main.py]
-
